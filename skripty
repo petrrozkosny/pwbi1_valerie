@@ -65,3 +65,17 @@ AVERAGEX(
     data[rok] <= SELECTEDVALUE(data[rok])
     && data[rok] >= SELECTEDVALUE(data[rok])-5),
 data[srazky])
+
+_____________________________________________
+
+06 prumer srazek rok vs. prumer srazek vse = 
+
+-- prumer srazek v danem roce
+AVERAGE(data[srazky])
+-- MÍNUS
+-
+-- prumer srazek za vsechny roky
+
+AVERAGEX(
+    ALL(data),
+data[srazky])
