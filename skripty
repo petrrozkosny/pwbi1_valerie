@@ -79,3 +79,27 @@ AVERAGE(data[srazky])
 AVERAGEX(
     ALL(data),
 data[srazky])
+
+__________________________________________________
+
+07 mezirocni prumer srazek 5 mesic viden = 
+
+-- prumerne srazky viden, mesic 5, dany rok
+
+AVERAGEX(
+    FILTER(data,
+    data[lokalita]= "WIEN"
+    && data[mesic] = 5),
+data[srazky])
+-- MÍNUS
+-
+-- prumerne srazky viden, mesic 5, predchozi rok
+
+AVERAGEX(
+    FILTER(
+        ALL(data),
+    data[rok] = SELECTEDVALUE(data[rok]) - 1
+    && data[mesic] = 5
+    && data[lokalita] = "WIEN"),
+data[srazky])
+
