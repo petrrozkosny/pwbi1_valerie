@@ -103,3 +103,9 @@ AVERAGEX(
     && data[lokalita] = "WIEN"),
 data[srazky])
 
+_______________________________________________________________
+
+08 lokality max srazek = 
+CONCATENATEX(
+    FILTER(data,data[srazky] = max(data[srazky])),
+    data[lokalita]&" | " &data[srazky],", ")
