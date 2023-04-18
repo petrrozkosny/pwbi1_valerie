@@ -109,3 +109,16 @@ _______________________________________________________________
 CONCATENATEX(
     FILTER(data,data[srazky] = max(data[srazky])),
     data[lokalita]&" | " &data[srazky],", ")
+
+__________________________
+
+10 minimalni datum = 
+MIN(data[datum])
+
+__________________________
+
+11 minimalni datum unor = 
+
+            MINX(
+                FILTER(data,data[mesic] = 2),
+            data[datum])
