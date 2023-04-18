@@ -1,0 +1,17 @@
+1. scénář: Respektuji všechny filtry vizuálu, žádné neruším ani nenastavuji. 
+Použiji základní agregační funkce, tj. SUM(), MIN(), MAX(), COUNT() apod.
+
+2. scénář: Respektuji filtry vizuálu (filtrem je každý sloupec, který je dosazen na osy vizuálu) a nastavuji další, zde
+si potřebuji vytvořit kopii tabulky za pomoci funkce FILTER(), tu pak agreguji funkcemi končícími na "X", tj.
+SUMX(FILTER()), MINX(FILTER()), MAXX(FILTER())
+
+3. scénář: Ruším filtry vizuálu (filtrem je každý sloupec, který je dosazen na osy vizuálu) a žádné nenastavuji. 
+Zde si potřebuji vytvořit kopii tabulky za pomoci funkce ALL() a tu pak agreguji funkcemi končícími na "X", tj.
+SUMX(ALL()), MINX(ALL()), MAXX(ALL()) apod.
+
+4. scénář: Ruším filtry vizuálu a nastavuji si vlastní (filtrem je každý sloupec, který je dosazen na osy vizuálu).
+Tj. potřebuji si:
+ - vytvořit kopii tabulky zbavenou všech filtrů za pomoci funkce ALL(),
+ - tabulku vrácenou funkcí ALL() zafiltrovat funkcí FILTER()
+ - tabulku vrácenou funkcí FITLER() agregovat.
+Tj. použiji kombinaci funkcí SUMX(FILTER(ALL())), MINX(FILTER(ALL())), COUNTX(FILTER(ALL())) apod.
