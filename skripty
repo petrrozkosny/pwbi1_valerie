@@ -122,3 +122,7 @@ __________________________
             MINX(
                 FILTER(data,data[mesic] = 2),
             data[datum])
+___________________________________
+
+12 minimalni datum prselo = 
+MINX(FILTER(data,data[srazky]>0),data[datum])
