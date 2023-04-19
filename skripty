@@ -141,3 +141,13 @@ data[rok] = vybrany_rok - 1
 ______________________________________________
 
 13 minimalni datum = min(data[datum])
+
+_____________________________________________
+
+14 minimalni datum rok = 
+
+minx(
+    FILTER(
+        ALL(data),
+    data[rok] = SELECTEDVALUE(data[rok])),
+data[datum])
