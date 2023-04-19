@@ -221,3 +221,14 @@ MAXX(
 VAR max_srazky = MAX(data[srazky])
 RETURN
 IF(max_srazky = max_srazky_ruzyne,"ANO","NE")
+______________________________________________
+
+23 nazev grafu vicenasobny vyber = 
+
+SWITCH(TRUE(),
+HASONEFILTER(dim_oblasti[země]),
+"Vyvoj srazek v zemi "&SELECTEDVALUE(dim_oblasti[země]),
+ISFILTERED(dim_oblasti[země]),
+"Vyvoj srazek v lokalitach :" &
+CONCATENATEX(DISTINCT(dim_oblasti[země]),dim_oblasti[země],", "),
+"Vyvoj srazek napric lokalitami")
