@@ -207,3 +207,17 @@ MAXX(
     data[lokalita] = "RUZYNE"
     && data[srazky] = max_srazky_ruzyne),
 data[datum])
+
+_______________________________________________________
+
+20 kontrola max srazek = 
+VAR max_srazky_ruzyne = 
+-- maximalni srazky v danem roce, mesici, ruzyne
+MAXX(
+    FILTER(
+    data,
+    data[lokalita] = "RUZYNE"),  
+    data[srazky])
+VAR max_srazky = MAX(data[srazky])
+RETURN
+IF(max_srazky = max_srazky_ruzyne,"ANO","NE")
