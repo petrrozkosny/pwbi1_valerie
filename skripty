@@ -151,3 +151,14 @@ minx(
         ALL(data),
     data[rok] = SELECTEDVALUE(data[rok])),
 data[datum])
+
+____________________________________________
+
+15 minimalni datum predchozi rok = 
+
+minx(
+    FILTER(
+        ALL(data),
+    data[rok] = SELECTEDVALUE(data[rok]) - 1
+    && data[mesic] = SELECTEDVALUE(data[mesic])),
+data[datum])
