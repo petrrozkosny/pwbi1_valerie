@@ -138,4 +138,6 @@ SUMX(
 FILTER(all(data),
 data[rok] = vybrany_rok - 1
 && data[mesic] = vybrany_mesic),data[srazky])
+______________________________________________
 
+13 minimalni datum = min(data[datum])
