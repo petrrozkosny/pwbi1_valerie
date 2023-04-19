@@ -171,3 +171,12 @@ FILTER(
     ALL(data),
 data[rok] = SELECTEDVALUE(data[rok]) - 1),
 data[datum])
+___________________________________________________________
+
+17 suma srazek kumulativne = 
+SUMX(
+FILTER(
+    ALL(data),
+data[rok] = SELECTEDVALUE(data[rok])
+&& data[mesic] <= SELECTEDVALUE(data[mesic])),
+data[srazky])
