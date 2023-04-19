@@ -190,3 +190,20 @@ SUMX(
     data[rok] = SELECTEDVALUE(data[rok]) - 1
     && data[mesic] <= SELECTEDVALUE(data[mesic])),
 data[srazky])
+
+________________________________________________
+
+19 max datum max srazek v ruzyni = 
+-- maximalni srazky v danem roce, mesici v lokalite ruzyni
+VAR max_srazky_ruzyne =     MAXX(
+    FILTER(data,data[lokalita] = "RUZYNE"),
+    data[srazky])
+
+
+RETURN 
+-- maximalni datum mesic,rok, ruzyne, maximalni_srazky
+MAXX(
+    FILTER(data,
+    data[lokalita] = "RUZYNE"
+    && data[srazky] = max_srazky_ruzyne),
+data[datum])
