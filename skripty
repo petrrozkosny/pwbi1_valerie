@@ -126,3 +126,16 @@ ___________________________________
 
 12 minimalni datum prselo = 
 MINX(FILTER(data,data[srazky]>0),data[datum])
+
+_____________________________________________
+
+001 suma srazek predchozi rok = 
+
+VAR vybrany_rok = SELECTEDVALUE(data[rok])
+VAR vybrany_mesic = SELECTEDVALUE(data[mesic])
+RETURN
+SUMX(
+FILTER(all(data),
+data[rok] = vybrany_rok - 1
+&& data[mesic] = vybrany_mesic),data[srazky])
+
