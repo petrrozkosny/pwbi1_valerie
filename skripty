@@ -180,3 +180,13 @@ FILTER(
 data[rok] = SELECTEDVALUE(data[rok])
 && data[mesic] <= SELECTEDVALUE(data[mesic])),
 data[srazky])
+
+_______________________________________________
+
+18 suma srazek kumulativne predchozi rok = 
+SUMX(
+    FILTER(
+        ALL(data),
+    data[rok] = SELECTEDVALUE(data[rok]) - 1
+    && data[mesic] <= SELECTEDVALUE(data[mesic])),
+data[srazky])
