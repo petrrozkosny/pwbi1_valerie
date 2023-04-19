@@ -232,3 +232,13 @@ ISFILTERED(dim_oblasti[země]),
 "Vyvoj srazek v lokalitach :" &
 CONCATENATEX(DISTINCT(dim_oblasti[země]),dim_oblasti[země],", "),
 "Vyvoj srazek napric lokalitami")
+______________________________
+
+26 suma srazek kumulativne = 
+SUMX(
+    FILTER(
+        ALL(data),
+    data[rok] = SELECTEDVALUE(data[rok])
+    && data[mesic] <= SELECTEDVALUE(data[mesic])
+    && data[lokalita] = SELECTEDVALUE(data[lokalita])),
+data[srazky])
